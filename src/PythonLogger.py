@@ -66,6 +66,7 @@ def startMon():
             #se a posicao do mouse mudou, ta ativo
             if(mousepos != lastmousepos):
                 lastmousepos = mousepos
+                lasttimemouse = datetime.now()
                 print('ativo');
                 if(tempo_inativo >= 120):
                     tempo_inativo = 0
