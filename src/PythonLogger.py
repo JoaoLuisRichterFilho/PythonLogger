@@ -11,13 +11,15 @@ from tkinter.filedialog import askopenfilenames
 from tkinter.filedialog import asksaveasfile
 import tkinter.font as font
 from datetime import datetime
+import pyautogui
+import time
 
 import os
-
+nameFile = datetime.now().date()
 def logAdd(windoName):
     try:
         if windoName:
-            with open("logger.txt", "a+") as file_object:
+            with open("logger_"+str(nameFile)+".txt", "a+") as file_object:
                 now = datetime.now()
                 # Move read cursor to the start of file.
                 file_object.seek(0)
@@ -46,10 +48,33 @@ def getForegroundWindowTitle() -> Optional[str]:
 def startMon():
     loop = True
     windowActive = ""
+    lastmousepos = pyautogui.position()
+    lasttime = datetime.now()
+    tempo_inativo = 0;
     while loop:
         if getForegroundWindowTitle() and windowActive != getForegroundWindowTitle():
             logAdd(getForegroundWindowTitle())
             windowActive = getForegroundWindowTitle()
             print(windowActive)
+            lastmousepos = pyautogui.position()
+            lasttimemouse = datetime.now()
+        else: 
+            #nao trocou de tela, espera 1 segundo
+            time.sleep(1)
+            mousepos = pyautogui.position()
 
+            #se a posicao do mouse mudou, ta ativo
+            if(mousepos != lastmousepos):
+                lastmousepos = mousepos
+                print('ativo');
+                if(tempo_inativo >= 120):
+                    tempo_inativo = 0
+                    logAdd('possivel ausencia temporaria > 2min')
+            else:
+                #tela parada e mouse nao mudou, pode estar inativo
+                nowmouse = datetime.now()
+                tdelta = nowmouse - lasttimemouse
+                tempo_inativo = tdelta.total_seconds()
+                print('segundos parado:', tdelta.total_seconds())
+                # if(nowmouse)
 startMon()
