@@ -1,9 +1,0 @@
-11/07/2022 05:50:24;E:\Python\PythonLogger\dist\PythonLogger.exe
-11/07/2022 05:50:29;dist
-11/07/2022 05:50:31;E:\Python\PythonLogger\dist\PythonLogger.exe
-11/07/2022 05:50:46;dist
-11/07/2022 05:50:49;logger_2022-07-11.txt - PythonLogger - Visual Studio Code
-
-11/07/2022 05:51:01;logger_2022-07-11.txt - PythonLogger - Visual Studio Code
-11/07/2022 05:51:05;PythonLogger.py - PythonLogger - Visual Studio Code
-11/07/2022 05:51:06;E:\Python\PythonLogger\dist\PythonLogger.exe

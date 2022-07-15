@@ -1,8 +1,0 @@
-11/07/2022 05:47:35;PythonLogger.py - PythonLogger - Visual Studio Code
-11/07/2022 05:47:43;dist
-11/07/2022 05:47:44;PythonLogger.py - PythonLogger - Visual Studio Code
-
-11/07/2022 05:47:47;PythonLogger.py - PythonLogger - Visual Studio Code
-11/07/2022 05:47:48;dist
-11/07/2022 05:47:51;PythonLogger.py - PythonLogger - Visual Studio Code
-11/07/2022 05:52:25;PythonLogger.py - PythonLogger - Visual Studio Code
